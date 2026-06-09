@@ -4,15 +4,15 @@
   /* Base — warm, trustworthy anchor */
   --color-cream: #fffbf4;
   --color-sand: #f6efe2;
-  --color-navy: #0b1f3a;
+  --color-navy: #0b1f38;
   --color-navy-800: #0f2747;
   --color-navy-700: #15315b;
   --color-navy-600: #1e4070;
-  --color-gold: #e0a528;
-  --color-gold-light: #f0c668;
-  --color-gold-dark: #a87a14;
-  --color-ink: #14202e;
-  --color-muted: #566273;
+  --color-gold: #c29a4e;
+  --color-gold-light: #ddbf7e;
+  --color-gold-dark: #927330;
+  --color-ink: #1a2230;
+  --color-muted: #5d6776;
 
   /* Joyful accent system — vibrant base + soft tint for cards */
   --color-coral: #f15a40;
@@ -98,10 +98,11 @@ body {
     background-clip: text;
     color: transparent;
   }
-  /* hand-drawn highlighter swipe behind a word */
+  /* elegant gold underline emphasis */
   .marker {
     position: relative;
     white-space: nowrap;
+    color: var(--color-gold-dark);
   }
   .marker > span {
     position: relative;
@@ -110,14 +111,12 @@ body {
   .marker::after {
     content: "";
     position: absolute;
-    left: -0.1em;
-    right: -0.1em;
-    bottom: 0.08em;
-    height: 0.42em;
-    background: var(--color-sun);
-    opacity: 0.55;
-    border-radius: 0.4em;
-    transform: rotate(-1.2deg);
+    left: 0.02em;
+    right: 0.02em;
+    bottom: -0.04em;
+    height: 0.1em;
+    background: var(--color-gold);
+    border-radius: 2px;
     z-index: 0;
   }
   .glass {
@@ -132,13 +131,11 @@ body {
   background-image: radial-gradient(rgba(11, 31, 58, 0.06) 1px, transparent 1px);
   background-size: 24px 24px;
 }
-/* soft, joyful section wash */
+/* calm, premium section wash — a whisper of warmth, not a rainbow */
 .bg-joy {
   background:
-    radial-gradient(60% 50% at 12% 0%, rgba(43, 143, 214, 0.1), transparent 60%),
-    radial-gradient(50% 45% at 95% 30%, rgba(241, 90, 64, 0.1), transparent 60%),
-    radial-gradient(55% 50% at 70% 100%, rgba(60, 157, 91, 0.1), transparent 60%),
-    var(--color-cream);
+    radial-gradient(70% 60% at 50% -10%, rgba(194, 154, 78, 0.07), transparent 70%),
+    var(--color-sand);
 }
 
 @keyframes marquee {

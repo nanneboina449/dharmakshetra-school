@@ -6,7 +6,7 @@ import Reveal from "./ui/Reveal";
 import SectionHeading from "./ui/SectionHeading";
 import { school } from "@/lib/data";
 
-export default function Contact() {
+export default function Contact({ showHeading = true }: { showHeading?: boolean }) {
   const [sent, setSent] = useState(false);
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -29,14 +29,16 @@ export default function Contact() {
     <section id="contact" className="relative overflow-hidden bg-navy py-24 sm:py-28">
       <div className="pointer-events-none absolute -left-20 bottom-0 h-80 w-80 rounded-full bg-gold/10 blur-3xl" />
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
-        <SectionHeading
-          dark
-          eyebrow="Admissions & Contact"
-          title="Begin your child's journey with us"
-          intro="Admissions are open for Nursery to Class 7. Reach out and our team will be glad to guide you through every step."
-        />
+        {showHeading && (
+          <SectionHeading
+            dark
+            eyebrow="Admissions & Contact"
+            title="Begin your child's journey with us"
+            intro="Admissions are open for Nursery to Class 7. Reach out and our team will be glad to guide you through every step."
+          />
+        )}
 
-        <div className="mt-14 grid gap-8 lg:grid-cols-[1fr_1.1fr]">
+        <div className={`grid gap-8 lg:grid-cols-[1fr_1.1fr] ${showHeading ? "mt-14" : ""}`}>
           {/* info */}
           <div className="space-y-4">
             <Reveal className="flex items-start gap-4 rounded-2xl border border-cream/10 bg-cream/[0.04] p-6">

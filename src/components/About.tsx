@@ -2,27 +2,10 @@ import Image from "next/image";
 import { Compass, Target } from "lucide-react";
 import Reveal from "./ui/Reveal";
 import SectionHeading, { Mark } from "./ui/SectionHeading";
-import { stats } from "@/lib/data";
-
-const statColors = ["text-coral", "text-teal", "text-sun", "text-lilac"];
 
 export default function About() {
   return (
     <section id="about" className="relative py-24 sm:py-28">
-      {/* stats band */}
-      <div className="mx-auto -mt-12 mb-20 max-w-6xl px-5 sm:px-8">
-        <Reveal className="grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-navy/10 bg-navy/10 shadow-soft md:grid-cols-4">
-          {stats.map((s, i) => (
-            <div key={s.label} className="bg-cream px-6 py-8 text-center">
-              <div className={`font-display text-3xl font-semibold sm:text-4xl ${statColors[i % statColors.length]}`}>
-                {s.value}
-              </div>
-              <div className="mt-1 text-sm font-medium text-muted">{s.label}</div>
-            </div>
-          ))}
-        </Reveal>
-      </div>
-
       <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-2">
         <Reveal className="relative">
           <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-card">

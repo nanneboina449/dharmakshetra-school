@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
 import { Menu, X, Phone } from "lucide-react";
 import Logo from "./ui/Logo";
@@ -9,6 +11,7 @@ import { navLinks, school } from "@/lib/data";
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -24,6 +27,9 @@ export default function Header() {
     };
   }, [open]);
 
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
@@ -31,7 +37,7 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 sm:px-8">
-        <a href="#home" className="flex items-center gap-3" aria-label={school.name}>
+        <Link href="/" className="flex items-center gap-3" aria-label={school.name}>
           <Logo className="h-10 w-10 shrink-0" />
           <span className="leading-tight">
             <span className="block font-display text-base font-semibold text-navy sm:text-lg">
@@ -41,17 +47,22 @@ export default function Header() {
               International School
             </span>
           </span>
-        </a>
+        </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex">
+        <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
-              className="rounded-full px-3.5 py-2 text-sm font-medium text-navy/80 transition-colors hover:bg-navy/5 hover:text-navy"
+              aria-current={isActive(link.href) ? "page" : undefined}
+              className={`rounded-full px-3.5 py-2 text-sm font-medium transition-colors ${
+                isActive(link.href)
+                  ? "bg-navy/5 text-navy"
+                  : "text-navy/75 hover:bg-navy/5 hover:text-navy"
+              }`}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -63,12 +74,12 @@ export default function Header() {
             <Phone className="h-4 w-4" strokeWidth={1.8} />
             {school.phones[0]}
           </a>
-          <a
-            href="#contact"
+          <Link
+            href="/admissions"
             className="hidden rounded-full bg-navy px-5 py-2.5 text-sm font-semibold text-cream shadow-soft transition-transform hover:-translate-y-0.5 hover:bg-navy-700 sm:inline-flex"
           >
             Apply for Admission
-          </a>
+          </Link>
           <button
             type="button"
             onClick={() => setOpen(true)}
@@ -110,25 +121,28 @@ export default function Header() {
                   <X className="h-5 w-5" />
                 </button>
               </div>
-              <nav className="mt-8 flex flex-col gap-1">
+              <nav className="mt-8 flex flex-col gap-1" aria-label="Mobile">
                 {navLinks.map((link) => (
-                  <a
+                  <Link
                     key={link.href}
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className="rounded-xl px-4 py-3 text-lg font-medium text-navy transition-colors hover:bg-navy/5"
+                    aria-current={isActive(link.href) ? "page" : undefined}
+                    className={`rounded-xl px-4 py-3 text-lg font-medium transition-colors ${
+                      isActive(link.href) ? "bg-navy/5 text-navy" : "text-navy hover:bg-navy/5"
+                    }`}
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 ))}
               </nav>
-              <a
-                href="#contact"
+              <Link
+                href="/admissions"
                 onClick={() => setOpen(false)}
                 className="mt-auto rounded-full bg-navy px-5 py-3.5 text-center text-base font-semibold text-cream"
               >
                 Apply for Admission
-              </a>
+              </Link>
             </motion.aside>
           </motion.div>
         )}

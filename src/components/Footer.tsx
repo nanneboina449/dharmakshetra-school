@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { MapPin, Phone, Mail } from "lucide-react";
 import Logo from "./ui/Logo";
 import { FacebookIcon, InstagramIcon, LinkedinIcon } from "./ui/SocialIcons";
@@ -39,9 +40,9 @@ export default function Footer() {
           <ul className="mt-4 space-y-2.5 text-sm">
             {navLinks.map((l) => (
               <li key={l.href}>
-                <a href={l.href} className="transition-colors hover:text-gold-light">
+                <Link href={l.href} className="transition-colors hover:text-gold-light">
                   {l.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -50,11 +51,11 @@ export default function Footer() {
         <div>
           <h4 className="font-display text-base font-semibold text-cream">Quick Links</h4>
           <ul className="mt-4 space-y-2.5 text-sm">
-            <li><a href="#contact" className="transition-colors hover:text-gold-light">Admissions</a></li>
-            <li><a href="#about" className="transition-colors hover:text-gold-light">About Dharmakshetra</a></li>
-            <li><a href="#facilities" className="transition-colors hover:text-gold-light">Infrastructure</a></li>
-            <li><a href="#leadership" className="transition-colors hover:text-gold-light">Our Leadership</a></li>
-            <li><span className="text-cream/60">Mandatory Disclosures</span></li>
+            <li><Link href="/admissions" className="transition-colors hover:text-gold-light">Admissions</Link></li>
+            <li><Link href="/about" className="transition-colors hover:text-gold-light">About Dharmakshetra</Link></li>
+            <li><Link href="/infrastructure" className="transition-colors hover:text-gold-light">Infrastructure</Link></li>
+            <li><Link href="/about" className="transition-colors hover:text-gold-light">Our Leadership</Link></li>
+            <li><Link href="/disclosures" className="transition-colors hover:text-gold-light">Mandatory Disclosures</Link></li>
           </ul>
         </div>
 

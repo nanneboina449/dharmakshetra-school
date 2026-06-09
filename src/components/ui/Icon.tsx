@@ -20,6 +20,10 @@ import {
   Handshake,
   Brain,
   Users,
+  Phone,
+  MapPin,
+  FileText,
+  CheckCircle2,
   type LucideIcon,
 } from "lucide-react";
 
@@ -45,6 +49,10 @@ const map: Record<string, LucideIcon> = {
   Handshake,
   Brain,
   Users,
+  Phone,
+  MapPin,
+  FileText,
+  CheckCircle2,
 };
 
 export default function Icon({

@@ -18,14 +18,71 @@ export const school = {
 };
 
 export const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Why Us", href: "#why-us" },
-  { label: "Academics", href: "#academics" },
-  { label: "Facilities", href: "#facilities" },
-  { label: "Leadership", href: "#leadership" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Academics", href: "/academics" },
+  { label: "Infrastructure", href: "/infrastructure" },
+  { label: "Admissions", href: "/admissions" },
+  { label: "Contact", href: "/contact" },
 ];
+
+export const admissionSteps = [
+  {
+    step: "01",
+    title: "Enquire & Connect",
+    desc: "Reach out via the enquiry form or phone. Our team shares details and answers your questions.",
+    icon: "Phone",
+  },
+  {
+    step: "02",
+    title: "Visit the Campus",
+    desc: "Tour our classrooms, labs and gardens, and meet the educators who will guide your child.",
+    icon: "MapPin",
+  },
+  {
+    step: "03",
+    title: "Submit Application",
+    desc: "Complete the registration form and submit the required documents for your child's grade.",
+    icon: "FileText",
+  },
+  {
+    step: "04",
+    title: "Interaction & Confirmation",
+    desc: "A warm, age-appropriate interaction, followed by confirmation of admission and onboarding.",
+    icon: "CheckCircle2",
+  },
+];
+
+export const admissionDocs = [
+  "Birth certificate of the child",
+  "Transfer Certificate (for Class 1 and above)",
+  "Report card / progress report from previous school",
+  "Passport-size photographs of the child and parents",
+  "Aadhaar card of the child and parents",
+  "Residential address proof",
+];
+
+// Sample CBSE mandatory disclosure data — replace with the school's official records.
+export const disclosures = {
+  general: [
+    { label: "Name of the School", value: "Dharmakshetra International School" },
+    { label: "Affiliation No. / School Code", value: "To be updated" },
+    { label: "Complete Address", value: "Kokanarayanapalem Road, Sultanagaram, Machilipatnam South, Andhra Pradesh — 521003" },
+    { label: "Principal Name & Qualification", value: "To be updated" },
+    { label: "School Email", value: "contact@dharmakshetraschools.org" },
+    { label: "Contact Numbers", value: "+91 99480 03311, +91 99480 03322" },
+  ],
+  documents: [
+    "Copy of Affiliation / Upgradation Letter",
+    "Copy of Society / Trust Registration Certificate",
+    "Copy of No Objection Certificate (NOC) issued by the State Government",
+    "Copy of Recognition Certificate under RTE Act, 2009",
+    "Building Safety Certificate",
+    "Fire Safety Certificate",
+    "Self-certification on affiliation bye-laws",
+    "Water, Health and Sanitation Certificates",
+  ],
+};
 
 export const stats = [
   { value: "100%", label: "Secure Campus" },

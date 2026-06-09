@@ -1,16 +1,15 @@
-import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
+import StatsBand from "@/components/StatsBand";
 import About from "@/components/About";
 import WhyUs from "@/components/WhyUs";
 import Academics from "@/components/Academics";
 import Facilities from "@/components/Facilities";
 import Leadership from "@/components/Leadership";
+import Gallery from "@/components/Gallery";
 import News from "@/components/News";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
-import BackToTop from "@/components/BackToTop";
 import { school } from "@/lib/data";
 
 const jsonLd = {
@@ -41,21 +40,20 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Header />
-      <main className="flex-1">
-        <Hero />
-        <Marquee />
-        <About />
-        <WhyUs />
-        <Academics />
-        <Facilities />
-        <Leadership />
-        <News />
-        <Testimonials />
-        <Contact />
-      </main>
-      <Footer />
-      <BackToTop />
+      <Hero />
+      <Marquee />
+      <div className="py-20">
+        <StatsBand pull={false} />
+      </div>
+      <About />
+      <WhyUs />
+      <Academics />
+      <Facilities />
+      <Leadership />
+      <Gallery />
+      <News />
+      <Testimonials />
+      <Contact />
     </>
   );
 }

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Check } from "lucide-react";
 import Reveal from "./ui/Reveal";
 import SectionHeading, { Mark } from "./ui/SectionHeading";
@@ -38,12 +39,12 @@ export default function Academics() {
             ))}
           </div>
           <Reveal delay={0.1}>
-            <a
-              href="#contact"
+            <Link
+              href="/admissions"
               className="mt-10 inline-flex rounded-full bg-navy px-7 py-3.5 text-base font-semibold text-cream shadow-soft transition-transform hover:-translate-y-0.5"
             >
               Enquire about admissions
-            </a>
+            </Link>
           </Reveal>
         </div>
 
