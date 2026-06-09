@@ -34,58 +34,78 @@ export const stats = [
   { value: "CBSE", label: "Affiliated Curriculum" },
 ];
 
-export const differentiators = [
+import type { Accent } from "./palette";
+
+export const differentiators: {
+  icon: string;
+  title: string;
+  desc: string;
+  color: Accent;
+}[] = [
   {
     icon: "HeartHandshake",
     title: "Value-Based Education",
     desc: "Rooted in integrity and cultural heritage, shaping character alongside academics.",
+    color: "coral",
   },
   {
     icon: "Rocket",
     title: "Future-Ready Learning",
     desc: "Blending tradition with innovation to prepare students for a changing world.",
+    color: "sky",
   },
   {
     icon: "Building2",
     title: "World-Class Facilities",
     desc: "Digital classrooms, STEAM labs and creative studios that inspire discovery.",
+    color: "teal",
   },
   {
     icon: "ShieldCheck",
     title: "100% Secure Campus",
     desc: "Comprehensive safety, accessibility and medical support for every child.",
+    color: "leaf",
   },
   {
     icon: "Sparkles",
     title: "Holistic Development",
     desc: "Academics, arts, sports and wellbeing growing together in harmony.",
+    color: "lilac",
   },
   {
     icon: "Globe2",
     title: "Global Outlook",
     desc: "Nurturing curiosity, confidence and a globally competent mindset.",
+    color: "sun",
   },
   {
     icon: "GraduationCap",
     title: "Experienced Educators",
     desc: "Dedicated, compassionate teachers committed to every learner's journey.",
+    color: "rose",
   },
   {
     icon: "Smile",
     title: "Student Care & Comfort",
     desc: "AC classrooms, transport and wellbeing services that put children first.",
+    color: "coral",
   },
 ];
 
-export const facilities = [
-  { icon: "MonitorPlay", title: "Digital Classrooms", desc: "Smart, interactive learning spaces." },
-  { icon: "FlaskConical", title: "STEAM Labs", desc: "Science, technology, engineering, arts & math." },
-  { icon: "Library", title: "Library & Studios", desc: "A world of books and creative expression." },
-  { icon: "Trees", title: "Nakshatravanam", desc: "A serene garden connecting students to nature." },
-  { icon: "Dumbbell", title: "Sports & Athletics", desc: "Building strength, teamwork and spirit." },
-  { icon: "AirVent", title: "AC Classrooms", desc: "Comfortable, focused learning all year." },
-  { icon: "Bus", title: "Transport Facility", desc: "Safe, reliable door-to-door travel." },
-  { icon: "Stethoscope", title: "Medical Support", desc: "On-campus care and wellbeing services." },
+export const facilities: {
+  icon: string;
+  title: string;
+  desc: string;
+  color: Accent;
+}[] = [
+  { icon: "MonitorPlay", title: "Digital Classrooms", desc: "Smart, interactive learning spaces.", color: "sky" },
+  { icon: "FlaskConical", title: "STEAM Labs", desc: "Science, technology, engineering, arts & math.", color: "lilac" },
+  { icon: "Library", title: "Library & Studios", desc: "A world of books and creative expression.", color: "coral" },
+  { icon: "Trees", title: "Nakshatravanam", desc: "A serene garden connecting students to nature.", color: "leaf" },
+  { icon: "Dumbbell", title: "Sports & Athletics", desc: "Building strength, teamwork and spirit.", color: "sun" },
+  { icon: "AirVent", title: "AC Classrooms", desc: "Comfortable, focused learning all year.", color: "teal" },
+  { icon: "Bus", title: "Transport Facility", desc: "Safe, reliable door-to-door travel.", color: "rose" },
+  { icon: "Stethoscope", title: "Medical Support", desc: "On-campus care and wellbeing services.", color: "leaf" },
 ];
 
 export const leadership = [

@@ -3,6 +3,9 @@ import Reveal from "./ui/Reveal";
 import SectionHeading from "./ui/SectionHeading";
 import Icon from "./ui/Icon";
 import { leadership, promises } from "@/lib/data";
+import { accent, type Accent } from "@/lib/palette";
+
+const promiseColors: Accent[] = ["coral", "teal", "sun", "lilac", "leaf"];
 
 export default function Leadership() {
   return (
@@ -46,19 +49,24 @@ export default function Leadership() {
           </h3>
         </Reveal>
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-          {promises.map((p, i) => (
-            <Reveal key={p.title} delay={(i % 5) * 0.05}>
-              <div className="flex h-full flex-col items-center rounded-2xl border border-navy/10 bg-cream p-6 text-center transition-transform hover:-translate-y-1">
-                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-gold/15 text-gold-dark">
-                  <Icon name={p.icon} className="h-6 w-6" />
-                </span>
-                <h4 className="mt-4 font-display text-base font-semibold leading-snug text-navy">
-                  {p.title}
-                </h4>
-                <p className="mt-1 text-xs font-medium uppercase tracking-wide text-muted">{p.source}</p>
-              </div>
-            </Reveal>
-          ))}
+          {promises.map((p, i) => {
+            const c = accent[promiseColors[i % promiseColors.length]];
+            return (
+              <Reveal key={p.title} delay={(i % 5) * 0.05}>
+                <div className="group flex h-full flex-col items-center rounded-3xl border border-navy/10 bg-cream p-6 text-center transition-all duration-300 hover:-translate-y-1.5 hover:shadow-pop">
+                  <span
+                    className={`flex h-14 w-14 items-center justify-center rounded-2xl ${c.chip} shadow-sm transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-105`}
+                  >
+                    <Icon name={p.icon} className="h-7 w-7" strokeWidth={1.8} />
+                  </span>
+                  <h4 className="mt-4 font-display text-base font-semibold leading-snug text-navy">
+                    {p.title}
+                  </h4>
+                  <p className="mt-1 text-xs font-medium uppercase tracking-wide text-muted">{p.source}</p>
+                </div>
+              </Reveal>
+            );
+          })}
         </div>
       </div>
     </section>

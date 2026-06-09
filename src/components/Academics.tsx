@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Check } from "lucide-react";
 import Reveal from "./ui/Reveal";
-import SectionHeading from "./ui/SectionHeading";
+import SectionHeading, { Mark } from "./ui/SectionHeading";
 
 const points = [
   "CBSE curriculum delivered with care and clarity",
@@ -20,13 +20,17 @@ export default function Academics() {
           <SectionHeading
             align="left"
             eyebrow="Academics"
-            title="A CBSE foundation built for curious minds"
+            title={
+              <>
+                A CBSE foundation for <Mark>curious</Mark> minds
+              </>
+            }
             intro="Our academic programme balances rigour with joy — giving children the confidence to ask, explore and grow at every stage."
           />
           <div className="mt-8 grid gap-3 sm:grid-cols-2">
             {points.map((p, i) => (
               <Reveal key={p} delay={(i % 2) * 0.05} className="flex items-start gap-3">
-                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gold/20 text-gold-dark">
+                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-leaf-soft text-leaf">
                   <Check className="h-3.5 w-3.5" strokeWidth={3} />
                 </span>
                 <span className="text-sm leading-relaxed text-navy/80">{p}</span>

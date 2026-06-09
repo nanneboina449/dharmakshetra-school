@@ -1,15 +1,20 @@
 import { Quote, Star } from "lucide-react";
 import Reveal from "./ui/Reveal";
-import SectionHeading from "./ui/SectionHeading";
+import SectionHeading, { Mark } from "./ui/SectionHeading";
+import Wave from "./ui/Wave";
 import { testimonials } from "@/lib/data";
 
 export default function Testimonials() {
   return (
-    <section className="bg-sand py-24 sm:py-28">
+    <section className="relative bg-sand pt-24 pb-0 sm:pt-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading
           eyebrow="Parent Voices"
-          title="Trusted by families in Machilipatnam"
+          title={
+            <>
+              Trusted by <Mark>families</Mark> in Machilipatnam
+            </>
+          }
           intro="The warmth of our community is best heard in the words of the parents who entrust us with their children."
         />
 
@@ -35,6 +40,7 @@ export default function Testimonials() {
           ))}
         </div>
       </div>
+      <Wave color="text-navy" className="mt-20" />
     </section>
   );
 }
